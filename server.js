@@ -14,6 +14,10 @@ app.use('/api/visits', require('./routes/visits'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/security', require('./routes/security'));
 
+app.get('/', (req, res) => {
+  res.send('Backend is running...');
+});
+
 // DB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB Connected'))
